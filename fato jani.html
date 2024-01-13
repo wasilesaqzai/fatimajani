@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitation</title>
+    <style>
+	body {
+    background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e6d12ccf-4f02-48e0-9deb-c64b3e0c636b/d29egwo-c37a801f-f710-4318-8756-9ac506a40636.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2U2ZDEyY2NmLTRmMDItNDhlMC05ZGViLWM2NGIzZTBjNjM2YlwvZDI5ZWd3by1jMzdhODAxZi1mNzEwLTQzMTgtODc1Ni05YWM1MDZhNDA2MzYuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.cCevz_BZYDksqXSOL--gruK8mF1cgTNfI5wDGz_HnCY') ;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Adding a semi-transparent white background for better readability */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #datePicker, #loveMessage, #callMessage, #sadMessage {
+            display: none;
+            margin-top: 20px;
+        }
+
+        #loveMessage, #sadMessage {
+            font-size: 24px;
+            color: #e74c3c;
+        }
+
+        #callMessage {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Hey Jani, can we go out?</h1>
+        <button onclick="showOptions('yes')">Yes</button>
+        <button onclick="showOptions('no')">No</button>
+
+        <div id="datePicker">
+            <h2>Choose a date:</h2>
+            <input type="date" id="chosenDate">
+            <button onclick="showLoveAndCallMessage()">Send Response</button>
+        </div>
+
+        <div id="loveMessage">
+            <p>🎉 Yay! I love you! 🥰</p>
+        </div>
+
+        <div id="sadMessage">
+            <p>😢 Aw, you don't love me?</p>
+        </div>
+
+        <div id="callMessage">
+            <p>text me at this number with the date you've chosen: <strong>0782258125</strong></p>
+        </div>
+    </div>
+
+    <script>
+        function showOptions(response) {
+            if (response === 'yes') {
+                document.getElementById("datePicker").style.display = "block";
+                document.getElementById("sadMessage").style.display = "none";
+            } else if (response === 'no') {
+                document.getElementById("sadMessage").style.display = "block";
+                document.getElementById("loveMessage").style.display = "none";
+                document.getElementById("callMessage").style.display = "none";
+                document.getElementById("datePicker").style.display = "none";
+            }
+        }
+
+        function showLoveAndCallMessage() {
+            document.getElementById("loveMessage").style.display = "block";
+            document.getElementById("callMessage").style.display = "block";
+        }
+    </script>
+</body>
+
+</html>
